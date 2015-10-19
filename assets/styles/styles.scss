@@ -1,0 +1,290 @@
+// Hypsum Style Coded by Hamsa Ganesh & Andrew Dyke Oct. 2015
+
+@import "setup";
+@import "variables";
+@import "form";
+
+/***************
+   GENERAL
+***************/
+
+html{
+	font-size: 62.5%;
+}
+
+body {
+		font-family: 'Inconsolata', monospace;
+		background: $sBlue;
+		color: white;
+		font-weight: 400;
+		font-size: 1.6rem;
+	}
+
+/***************
+   STRUCTURE
+***************/
+a {
+	text-decoration: none;
+	color: $sGreen;
+	font-weight: 400;
+}
+
+.pageTopBorder {
+	top:0;
+	position: fixed;
+	background: $sGreen;
+	height: 3px;
+	width: 100%;
+}
+
+.wrapper {
+	padding: 2rem;
+	max-width: 770px;
+	margin: 0 auto;
+}
+
+hr {
+	width: 78%;
+	border: 2px solid $sdBlue;
+	margin: 4rem auto;
+}
+
+section.submission {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+
+	.radioList{
+		padding: 1rem;
+		width: 15%
+	} 
+}
+
+section.hypsumText{
+	visibility: visible;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: auto;
+
+	.yourPara{
+		margin-top: 3rem;
+		order:1;
+		p{
+			color: $sSnow;
+			display: inline;
+		
+			&::selection{
+				background:$sdBlue;
+			}
+		}
+	}	
+	form{
+		order:2;
+	}
+
+}
+
+div.yourPara {
+	background: $sBlue;
+	box-shadow: 0 1rem 3rem $sdBlue;
+	padding: 3rem;
+	position: relative;
+
+	&::before {
+		position: absolute;
+		content: '1';
+		display: inline;
+		color: $sSerial;
+		background: $sdBlue;
+		padding: 0 1rem;
+		left: 0;
+	}
+}
+
+/***************
+   TYPOGRAPHY
+***************/
+
+h1 {
+	font-size: 17rem;
+	color: $sRed;
+	text-shadow: $sdBlue .01em .01em 0, $sdBlue .02em .02em 0, $sdBlue .03em .03em 0, $sdBlue .04em .04em 0, $sdBlue .05em .05em 0, $sdBlue .06em .06em 0, $sdBlue .07em .07em 0,	$sdBlue .08em .08em 0, $sdBlue .09em .09em 0, $sdBlue .1em .1em 0;
+	margin-bottom: 3rem;
+	margin-top: 0;
+	text-align: center;
+
+	&::before{
+		content:'>_';
+		margin-right: -10rem;
+		vertical-align: -2rem;
+		letter-spacing: 1rem;
+		color: $sCyan;
+	}
+}
+
+h2 {
+	font-weight: 400;
+	font-size: 2.9rem;
+	color: $sGreen;
+	text-align: center;
+	margin: 0 20px;
+	
+	a {
+		color: $sRed;
+		text-decoration: none;
+		border-bottom: 2px dotted $sCyan;
+		
+		&::before {
+			content: '<';
+			margin-right: .5rem;
+		}
+
+		&::after {
+			content: '>';
+			margin-left: .5rem;
+		}
+	}
+}
+
+h3 {
+	font-weight: 400;
+	font-size: 	2.2rem;
+	text-align: center;
+	color: $sCyan;
+	margin: 0 20px 30px;
+}
+
+#loremForem {
+
+}
+
+/***************
+   ASSETS
+***************/
+
+// BUTTON
+
+
+button.clipCopy {
+	display: none;
+}
+
+button.finalClip {
+	visibility: visible;
+	background: $sRed;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+
+button.btn[type=submit]{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+button {
+	display: block;
+	outline: none;
+	border: none;
+	border-radius: 3rem;
+	padding: 1.2rem 2rem;
+	background: $sGreen;
+	box-shadow: .1rem .1rem $sdBlue, .2rem .2rem $sdBlue, .3rem .3rem $sdBlue, .4rem .4rem $sdBlue, .5rem .5rem $sdBlue, .6rem .6rem $sdBlue, .7rem .7rem $sdBlue;
+	font-weight: 900;
+	margin-top: 4rem;
+	margin-bottom: 3rem;
+	&::before {
+		content:'>_';
+		vertical-align: -.3rem;
+		margin-right: -1.2rem;
+		letter-spacing: .3rem;
+	}
+}
+
+
+#center {
+	margin: 20px 0;
+	text-align: center;
+}
+
+p.copyright {
+	margin: 20px 0;
+	color: $sCyan;
+	font-size: 1.2rem;
+}
+
+
+// MEDIA QUERIES
+@media (max-width: 760px) {
+	h1 {
+		font-size: 16rem;
+		&::before{
+			margin-right: -9.25rem;
+		}
+	}
+}
+ 
+@media (max-width: 690px) {
+	h1 {
+		font-size: 14rem;
+		&::before{
+			margin-right: -8.25rem;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	h1 {
+		font-size: 13rem;
+		&::before{
+			margin-right: -7.5rem;
+		}
+	}
+}
+
+
+@media (max-width: 550px) {
+	h1 {
+		font-size: 11rem;
+		&::before{
+			margin-right: -6.25rem;
+		}
+	}
+	h2 {
+		font-size: 2rem;
+	}
+}
+
+
+@media (max-width: 500px) {
+	h1 {
+	font-size: 10rem;
+		&::before{
+			margin-right: -6rem;
+		}
+	}
+	.wrapper {
+		padding: 2rem 0;
+	}
+	section.submission .radioList {
+		width: 25%;
+	}
+}
+
+
+
+@media (max-width: 420px) {
+	h1 {
+		font-size: 8rem;
+		&::before{
+			margin-right: -5.25rem;
+		}
+	}
+	.hvr-grow {
+		display: flex;
+	}
+}
